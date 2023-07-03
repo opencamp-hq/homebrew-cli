@@ -1,4 +1,4 @@
-class OpenCamp < Formula
+class Opencamp < Formula
   desc "Simple CLI for interacting with the recreation.gov API"
   homepage "https://github.com/opencamp-hq/cli"
   url "https://github.com/opencamp-hq/cli/archive/refs/tags/v0.3.1.tar.gz"
