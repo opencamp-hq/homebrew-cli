@@ -11,13 +11,9 @@ class Opencamp < Formula
     ENV["GOPATH"] = buildpath
 
     bin_path = buildpath/"src/github.com/opencamp-hq/cli"
-    # Copy all files from their current location (GOPATH root)
-    # to $GOPATH/src/github.com/opencamp-hq/cli
     bin_path.install Dir["*"]
     cd bin_path do
-      # Install the compiled binary into Homebrew's `bin` - a pre-existing
-      # global variable
-      system "go", "build", "-o", bin/"opencamp", "."
+      system "go", "build", "-ldflags", "-X github.com/opencamp-hq/cli/cmd.version=#{version}", "-o", bin/"opencamp", "."
     end
   end
 
