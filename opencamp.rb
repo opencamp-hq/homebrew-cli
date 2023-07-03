@@ -22,6 +22,6 @@ class OpenCamp < Formula
   end
 
   test do
-    system "#{bin}/binary_name", "--version"
+    system "#{bin}/opencamp", "version"
   end
 end
